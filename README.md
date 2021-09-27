@@ -2,7 +2,8 @@
 Auto Use Wine.</br>
 
 # Features
-- Auto Use Wine in added zones and only when entering combat.
+- Auto Use Wine in added zones and only when entering combat
+- Auto Use Wine when buff <= 60 sec and incombat
 
 # Commands
 ```
