@@ -64,6 +64,23 @@ module.exports = function AutoWine(mod) {
 
     mod.hook('S_PLAYER_STAT_UPDATE', 17, (event) => {
         if(!enabled) return;
+		//mod.command.message(abnormalityDuration(redwine_abn));
+		//mod.command.message(abnormalityDuration(whitewine_abn));
+		//mod.command.message(job);
+		if(job === 0 || job === 1 || job === 2 || job === 3 || job === 5 || job === 10 || job === 12)
+		{
+			if(abnormalityDuration(redwine_abn) <= 60000)
+			{
+				drunk = false;
+			}
+		}
+		if(job === 4 || job === 6 || job === 7 || job === 8 || job === 9 || job === 11)
+		{
+			if(abnormalityDuration(whitewine_abn) <= 60000)
+			{
+				drunk = false;
+			}
+		}
         alive = event.alive;
         if(event.status == 1 && event.alive && !drunk && zones.includes(aZone)){
             if(phys){
@@ -117,7 +134,7 @@ module.exports = function AutoWine(mod) {
 
     mod.hook('S_ABNORMALITY_BEGIN', 5, (event) => {
         if ((event.id === redwine_abn || event.id === whitewine_abn) && gameId === event.target) {
-            drunk = true;
+			drunk = true;
         }
     })
 
@@ -132,7 +149,16 @@ module.exports = function AutoWine(mod) {
             drunk = false;
         }
     })
-
+	
+	function abnormalityDuration(id) {
+        const abnormality = mod.game.me.abnormalities[id]
+        return abnormality ? abnormality.remaining : 0
+    }
+	
+	function s2n(n) {
+		return Number(n);
+	}
+	
     async function updateConfig(){
         zones = config_file["zones"];
     }
