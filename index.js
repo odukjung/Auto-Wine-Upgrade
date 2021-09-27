@@ -155,10 +155,6 @@ module.exports = function AutoWine(mod) {
         return abnormality ? abnormality.remaining : 0
     }
 	
-	function s2n(n) {
-		return Number(n);
-	}
-	
     async function updateConfig(){
         zones = config_file["zones"];
     }
