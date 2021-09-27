@@ -1,13 +1,15 @@
 {
-    "name": "autowine",
-    "author": "Elucifur",
+    "author": "<font color='#00FFFF'>Elucifur, odukjung</font>",
     "description": "Auto use wine.",
+    "disableAutoUpdate": true,
+    "disabled": false,
+    "donationUrl": "",
+    "name": "Auto-Wine",
     "options": {
-        "niceName": "Auto-Wine",
-        "guiName": "Auto-Wine"
-    },
-    "version": "",
-    "supportUrl": "https://github.com/elucifurr/auto-wine/issues",
-    "servers": ["https://raw.githubusercontent.com/elucifurr/auto-wine/main/"],
-    "disableAutoUpdate": false
+        "niceName": "<font color='#FDD017'>Auto-Wine</font>",
+        "guiName": "<font color='#FDD017'>Auto-Wine</font>"	
+	},
+    "servers": [""],
+    "supportUrl": "",
+    "version": "<font color='#00FFFF'>1.0.0</font>"
 }
