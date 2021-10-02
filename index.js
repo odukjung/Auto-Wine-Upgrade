@@ -42,6 +42,7 @@ module.exports = function AutoWine(mod) {
             if(!config_file["zones"].includes(aZone)) zones.push(aZone);
             config_file["zones"] = zones;
             fs.writeFileSync(path.join(__dirname, "config.json"), JSON.stringify(config_file, null, 2));
+			mod.command.message('Add Zone : ' + aZone)
 		},
         'remove'() {
             let i = zones.indexOf(aZone);
@@ -50,6 +51,7 @@ module.exports = function AutoWine(mod) {
             }
             config_file["zones"] = zones;
             fs.writeFileSync(path.join(__dirname, "config.json"), JSON.stringify(config_file, null, 2));
+			mod.command.message('Remove Zone : ' + aZone)
         }
     })
 
@@ -64,19 +66,16 @@ module.exports = function AutoWine(mod) {
 
     mod.hook('S_PLAYER_STAT_UPDATE', 17, (event) => {
         if(!enabled) return;
-		//mod.command.message(abnormalityDuration(redwine_abn));
-		//mod.command.message(abnormalityDuration(whitewine_abn));
-		//mod.command.message(job);
 		if(job === 0 || job === 1 || job === 2 || job === 3 || job === 5 || job === 10 || job === 12)
 		{
-			if(abnormalityDuration(redwine_abn) <= 60000)
+			if(abnormalityDuration(redwine_abn) <= 30000)
 			{
 				drunk = false;
 			}
 		}
 		if(job === 4 || job === 6 || job === 7 || job === 8 || job === 9 || job === 11)
 		{
-			if(abnormalityDuration(whitewine_abn) <= 60000)
+			if(abnormalityDuration(whitewine_abn) <= 30000)
 			{
 				drunk = false;
 			}
