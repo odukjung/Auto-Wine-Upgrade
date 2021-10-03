@@ -1,6 +1,8 @@
 # Auto-Wine
 Auto Use Wine.</br>
 
+** MOD isn't Auto-Update plz manual update 
+
 # Features
 - Auto Use Wine in added zones and only when entering combat
 - Auto Use Wine when buff <= 30 sec and incombat
